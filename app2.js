@@ -1,8 +1,14 @@
 var express = require('express');
+var engines = require('consolidate');
+
 var app = express();
 
+app.engine('html', engines.nunjucks);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+
 app.get('/', function(req, res) {
-  res.send('Hello, jabroni!');
+  res.render('hello', { 'name': 'BossMan' });
 });
 
 app.use(function(req, res) {
