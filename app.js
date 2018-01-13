@@ -1,3 +1,4 @@
+// basic node.js app with a mongodb connection
 console.log('Hello, Kyle!');
 
 var MongoClient = require('mongodb').MongoClient;
